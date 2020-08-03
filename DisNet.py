@@ -20,7 +20,7 @@ class DisNet(object):
         self.anchors_path = 'model_data/yolo_anchors.txt'
         self.classes_path = 'model_data/coco_classes.txt'
         self.detect_classes_path = 'model_data/detect_classes.txt'
-        self.distance_model_path = "DisNet_Model/model_3.keras"
+        self.distance_model_path = "model_3.keras"
         self.score = 0.3
         self.iou = 0.5
         self.zoom_in_factor = scale
@@ -137,7 +137,7 @@ class DisNet(object):
                 right = min(image.size[0], np.floor(right + 0.5).astype('int32'))
 
                 #corner = np.array([image.size[0]-label_size_corner[0], 0 + label_size_corner[1]*i])
-		corner = np.array([0, 0 + label_size_corner[1]*i])
+                corner = np.array([0, 0 + label_size_corner[1]*i])
                 if top - label_size[1] >= 0:
                     text_origin = np.array([left, top - label_size[1]])
 
